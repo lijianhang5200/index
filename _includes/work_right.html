@@ -1,0 +1,22 @@
+<div class="blog-article">
+    <div class="blog-info">
+        <div class="blog-info-figure">
+            <img src="https://thirdqq.qlogo.cn/g?b=sdk&k=cwyaG3iaclD03ISPBq7orDA&s=140&t=1499577301" alt="头像">
+        </div>
+        <p class="blog-info-nickname">李舰航</p>
+        <p class="blog-info-introduce"><i class="layui-icon layui-icon-location"></i> 北京</p>
+        <p class="blog-info-introduce">欢迎来到我的个人网站~</p>
+        <hr>
+        <div class="blog-info-contact">
+            <a target="_blank" href="tencent://message/?uin=970082001&amp;Site=lijianhang&amp;Menu=yes"><i class="layui-icon layui-icon-login-qq"></i></a>
+            <a target="_blank" href="pages/contact.html"><i class="layui-icon layui-icon-chat"></i></a>
+        </div>
+    </div>
+    <!-- 标签 -->
+    <div class="blog-tags">
+        <h3 class="title-sidebar"><i class="fa fa-tags"></i>标签云</h3>
+        <div>{% include work_tags.html tags=rawtags %}</div>
+    </div>
+    <!-- 友情链接 -->
+    {% include links.html tags=rawtags %}
+</div>

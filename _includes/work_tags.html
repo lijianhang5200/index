@@ -1,0 +1,4 @@
+{% assign tags = include.tags | split:'|' | sort | uniq %}
+{% for tag in tags %}
+<a class="layui-btn layui-btn-xs" href="pages/work_tags.html#{{ tag | cgi_escape }}">{{ tag }}</a>
+{% endfor %}

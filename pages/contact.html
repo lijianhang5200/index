@@ -1,0 +1,32 @@
+---
+layout: home
+title: "联系我"
+---
+<div class="layui-container">
+    <div class="layui-row">
+        <div class="layui-col-md12" style="width: 100%;margin: 0 auto;padding: 12px;">
+            <div style="text-align: center;padding: 20px;background-color: #fff;">
+                <div><img src="assets/images/messagewall.png" alt="写邮件"/></div>
+                <p style="font-size: 2.6em;font-weight: bold;margin:15px;">联系我</p>
+                <p style="margin: 20px auto;font-size: 2em;width: 90%;">本页面比较单一,但可以直接通过本页面发送邮件联系我！</p>
+                <div class="layui-form layui-form-pane">
+                    <form action="http://dot.lijianhang.top/email/index/mail">
+                        <div class="layui-form-item layui-form-text">
+                            <div class="layui-input-block">
+                            <textarea id="content" name="content" lay-verify="content" placeholder="请输入内容"
+                                      class="layui-textarea fly-editor"></textarea>
+                                <div class="layui-layedit"><div class="layui-unselect layui-layedit-tool"></div>
+                                    <div class="layui-layedit-iframe"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <button class="layui-btn" lay-filter="submit" lay-submit>提交邮件</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>

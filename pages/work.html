@@ -1,0 +1,40 @@
+---
+layout: work
+title: "李舰航的作品主页"
+---
+{% assign rawtags = "" %}
+{% for work in site.work %}
+{% if work.tags.size > 0 %}
+{% assign work_tags = work.tags | join:'|' | append:'|' %}
+{% assign rawtags = rawtags | append:work_tags %}
+{% endif %}
+{% endfor %}
+
+<div class="layui-container">
+    <div class="layui-row">
+        <div class="layui-col-md9">
+            <div class="blog-article" >
+                <ul class="blog-article-ul">
+                    {% for item in site.work %}
+                    <li class="blog-article-li">
+                        <a href="{% if item.http %}{{ item.http }}{% else %}{{ item.url }}{% endif %}" {% if item.http %} target="_blank" {% endif %}>
+                            <h3>{{ item.title }}</h3>
+                            <div>{{ item.excerpt | strip_html | escape }}</div>
+                        </a>
+                        <span>
+                        <i class="layui-icon layui-icon-log"></i> {{ item.date | date: "%Y-%m-%d" }} &nbsp;
+                        <i class="layui-icon layui-icon-note"></i> {{ item.tags | join:' '}} &nbsp;
+                        </span>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <div class="blog-clear"></div>
+            </div>
+        </div>
+
+        <div class="layui-col-md3">
+            {% include work_right.html %}
+        </div>
+    </div>
+</div>
+<div class="layui-clear"></div>

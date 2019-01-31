@@ -1,0 +1,86 @@
+---
+layout: home
+title: "个人简历"
+---
+<div class="layui-container">
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <div id="pdf_viewer"></div>
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src='assets/js/pdf.js'></script>
+<script>
+    var url = '../assets/pdf/李舰航简历.pdf';
+    PDFJS.workerSrc = 'assets/js/pdf.worker.js';
+
+    window.onload = function () {
+
+        // 创建canvas方法
+        function createPdfContainer(id, className) {
+            var pdfContainer = document.getElementById('pdf_viewer');
+            var canvasNew = document.createElement('canvas');
+            canvasNew.id = id;
+            canvasNew.className = className;
+            pdfContainer.appendChild(canvasNew);
+        };
+
+        // 渲染pdf
+        function renderPDF(pdf, i, id) {
+            pdf.getPage(i).then(function (page) {
+                //默认设置文档的显示大小
+                var scale = window.screen.width/640;
+                if (scale > 1.9) scale = 1.9;
+                var viewport = page.getViewport(scale);
+
+                //
+                //  准备用于渲染的 canvas 元素
+                //
+
+                var canvas = document.getElementById(id);
+                var context = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                document.getElementById('pdf_viewer').style.cssText = "height:" + viewport.height + "px";
+                canvas.width = viewport.width;
+                //
+                // 将 PDF 页面渲染到 canvas 上下文中
+                //
+                var renderContext = {
+                    canvasContext: context,
+                    viewport: viewport
+                };
+                page.render(renderContext);
+            });
+        };
+
+        // 创建和pdf页数等同的canvas数
+        function createSeriesCanvas(num, template) {
+            var id = '';
+            for (var j = 1; j <= num; j++) {
+                id = template + j;
+                createPdfContainer(id, 'pdfClass');
+            }
+        }
+
+        // 读取pdf文件，并加载到页面中
+        function loadPDF(fileURL) {
+            PDFJS.getDocument(fileURL).then(function (pdf) {
+                // 用 promise 获取页面
+                var id = '';
+                var idTemplate = 'cw-pdf-';
+                var pageNum = pdf.numPages;
+                //根据页码创建画布
+                createSeriesCanvas(pageNum, idTemplate);
+                //将pdf渲染到画布上去
+                for (var i = 1; i <= pageNum; i++) {
+                    id = idTemplate + i;
+                    renderPDF(pdf, i, id);
+                }
+            });
+        }
+
+        // 启动
+        loadPDF(url);
+    };
+</script>

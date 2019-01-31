@@ -1,0 +1,46 @@
+---
+layout: work
+---
+<!-- cycles through posts to get tags -->
+{% assign rawtags = "" %}
+{% for work in site.work %}
+{% if work.tags.size > 0 %}
+{% assign work_tags = work.tags | join:'|' | append:'|' %}
+{% assign rawtags = rawtags | append:work_tags %}
+{% endif %}
+{% endfor %}
+<!--{% include work_tags.html tags=rawtags %}-->
+<div class="layui-container">
+    <div class="layui-row">
+        <div class="layui-col-md9">
+            <div class="blog-article">
+                <div class="layui-collapse" style="margin-top: 8px !important;margin-bottom: 15px !important;">
+                    {% for tag in tags %}
+                    <div class="layui-colla-item">
+                        <h2 id="{{ tag | cgi_escape }}" class="layui-colla-title" style="font-size:16px !important;background:#FFFFFF">{{ tag }}</h2>
+                        <div class="layui-colla-content">
+                            <!-- Posts -->
+                            {% for work in site.work %}
+                            {% if work.tags contains tag %}
+                            <li class="blog-article-li">
+                                <h3><a href="{% if work.http %}{{ work.http }}{% else %}{{ work.url }}{% endif %}" {% if work.http %} target="_blank" {% endif %}>{{ work.title }}</a></h3>
+                                <div>{{ work.excerpt | strip_html | escape }}</div>
+                                <span><i class="margin-left-15"></i>{{ work.date | date: "%Y-%m-%d" }}</span>
+                            </li>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+            <div class="blog-clear"></div>
+        </div>
+
+        <div class="layui-col-md3">
+            {% include blog_right.html %}
+        </div>
+    </div>
+</div>
+<div class="layui-clear"></div>

@@ -1,0 +1,195 @@
+/* 全局 */
+html,body{overflow-x:hidden}
+html body{background-color:#eef5f2;margin-top:61px}
+html{background-color:#F2F2F2}
+i{font-style:normal}
+a:hover{color:#009688;transition:all .3s}
+.layui-nav-tree .layui-nav-item a:hover {background-color:#FFFFFF;}
+
+/* 头部 */
+.index-header{position:fixed;left:0;top:0;z-index:666;width:100%;height:110px;border-right:1px solid #404553;border-radius:0}
+.index-logo{position:absolute;left:5px;top:0px}
+.fly-nav{margin-left:200px}
+.fly-nav a i{position:absolute;left:25px;top:0;padding-right:10px;font-size:26px}
+
+.index-nav{position:absolute;top:0;right:0;display:block}
+.index-nav-xs{position:absolute;top:0;right:0;display:none}
+.index-nav .iconfont{position:relative}
+.index-nav-xs .iconfont{position:relative}
+
+.blog-nav-diff{height:50px}
+/* 轮播图 */
+div[carousel-item]>*{text-align:center}
+/* 导航栏 */
+.index-header .layui-nav{padding:0;background:none}
+.index-header .layui-nav li a:hover,.blog-nav-left li a:hover{color:#393D49}
+.index-header .layui-nav li a,.blog-nav-left li a{padding:0 10px;color:dimgray !important}
+.index-header .layui-this a{color:#009688}
+.blog-nav-left{padding-top:20%;width:0;text-align:center;background:rgba(255, 255, 255, .9)}
+
+/* 底部 */
+.index-footer{margin:0px 0 0;padding:20px 0 20px;line-height:30px;text-align:center;color:#737573;border-top:1px solid #e2e2e2;width:100%}
+.index-footer a{padding:0 6px;font-weight:300;color:#333}
+.index-footer a:hover{color:#777}
+
+/* 专栏 */
+.blog-nav{height:50px;line-height:50px;margin-top:61px;background-color:#fff;box-shadow:0 1px 2px 0 rgba(0,0,0,.05);border-radius:2px}
+.blog-nav ul li{position:relative;display:inline-block;height:50px}
+.blog-nav ul li a{padding:0 20px}
+.blog-nav ul li.layui-this:after{position:absolute;bottom:13px;left:8px;z-index:0;width:50px;height:22px;border:1px solid #5FB878;border-radius:2px}
+.blog-nav ul li.layui-this a{color:#5FB878}
+.blog-nav-right{position:absolute;right:0;top:0}
+.blog-nav-right .layui-btn{vertical-align:initial}
+.blog-nav .layui-badge-dot{position:absolute;top:50%;left:50%;margin:-4px 0 0 23px}
+
+/* 文章列表 */
+.blog-article{margin:0 auto;max-width:970px;padding:8px}
+.blog-article-ul{width:100%;margin:0 auto}
+.blog-article-li{background:#FFFFFF;min-height:110px;width:calc(100% - 34px);border:1px #e1e4e8 solid !important;border-radius:3px !important;margin-top:8px !important;margin-bottom:8px !important;padding:16px !important;position:relative}
+.blog-article-li h2{margin-bottom:10px;font-size:18px}
+.blog-article-li p{color:#555555;line-height:24px;margin-bottom:25px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}
+.blog-article-li span{color:#009688 !important;font-size:12px !important;position:absolute;bottom:15px}
+
+/* 博客内容 */
+.blog-content{width:100%;margin:0 auto;background:#FFFFFF;min-height:110px;width:calc(100% - 34px);border:1px #e1e4e8 solid !important;border-radius:3px !important;margin-top:8px !important;padding:16px !important;position:relative}
+.blog-content h1{margin-top:40px;margin-bottom:12px;font-size:2em;text-align:center;font-weight:500}
+.blog-content h2{margin-top:35px;margin-bottom:10px;font-size:1.8em;font-weight:500}
+.blog-content h3{margin-top:30px;margin-bottom:8px;font-size:1.6em;font-weight:500}
+.blog-content h4{margin-top:25px;margin-bottom:6px;font-size:1.5em;font-weight:500}
+.blog-content h5{margin-top:20px;margin-bottom:4px;font-size:1.4em;font-weight:500}
+.blog-content h6{margin-top:15px;margin-bottom:2px;font-size:1.2em;font-weight:500}
+.blog-content p{font-size:14px;color:#1a1a1a;overflow:hidden;text-overflow:ellipsis;text-indent:1em}
+.blog-content img{width:100%}
+.blog-content br{display:inline;line-height:2em}
+.blog-content a{color:#3f88bf}
+.blog-content a:hover{text-decoration:underline}
+.blog-content .layui-code-h3{display:none}
+.blog-content .layui-table td{word-break:break-all;word-wrap:break-word}
+.blog-content ul:not(.layui-code-ol),.blog-content ol:not(.layui-code-ol){margin-left:35px;padding-left:0}
+.blog-content ol:not(.layui-code-ol) li{list-style-type:decimal;line-height:2em}
+.blog-content ul:not(.layui-code-ol) li{list-style-type:disc;line-height:2em}
+.blog-content pre ol.layui-code-ol li:last-child{display:none}
+/* 代码高亮 */
+.blog-content .highlight .bp{color:#000}
+.blog-content .highlight .c{color:#888}
+.blog-content .highlight .c1{color:#3f7f5f}
+.blog-content .highlight .cd{color:#000}
+.blog-content .highlight .cm{color:#000}
+.blog-content .highlight .cp{color:#000}
+.blog-content .highlight .cs{color:#000}
+.blog-content .highlight .err{color:#000}
+.blog-content .highlight .gd{color:#000}
+.blog-content .highlight .ge{color:#000}
+.blog-content .highlight .gh{color:#000}
+.blog-content .highlight .gi{color:#000}
+.blog-content .highlight .go{color:#000}
+.blog-content .highlight .gp{color:#000}
+.blog-content .highlight .gr{color:#000}
+.blog-content .highlight .gs{color:#000}
+.blog-content .highlight .gt{color:#000}
+.blog-content .highlight .gu{color:#000}
+.blog-content .highlight .il{color:#000}
+.blog-content .highlight .k{color:#000}
+.blog-content .highlight .kc{color:#368a17}
+.blog-content .highlight .kd{color:#069}
+.blog-content .highlight .kn{color:#000}
+.blog-content .highlight .kp{color:#000}
+.blog-content .highlight .kr{color:#000}
+.blog-content .highlight .kt{color:#000}
+.blog-content .highlight .kv{color:#000}
+.blog-content .highlight .m{color:#000}
+.blog-content .highlight .mb{color:#000}
+.blog-content .highlight .mf{color:#000}
+.blog-content .highlight .mh{color:#000}
+.blog-content .highlight .mi{color:#000}
+.blog-content .highlight .mo{color:#000}
+.blog-content .highlight .mx{color:#000}
+.blog-content .highlight .n{color:#000}
+.blog-content .highlight .na{color:#000}
+.blog-content .highlight .nb{color:#000}
+.blog-content .highlight .nc{color:#000}
+.blog-content .highlight .nd{color:#000}
+.blog-content .highlight .ne{color:#000}
+.blog-content .highlight .nf{color:#000}
+.blog-content .highlight .ni{color:#000}
+.blog-content .highlight .nl{color:#000}
+.blog-content .highlight .nn{color:#000}
+.blog-content .highlight .no{color:#000}
+.blog-content .highlight .nt{color:#666}
+.blog-content .highlight .nv{color:#000}
+.blog-content .highlight .nx{color:#000}
+.blog-content .highlight .o{color:#000}
+.blog-content .highlight .ow{color:#000}
+.blog-content .highlight .py{color:#000}
+.blog-content .highlight .s{color:#009688}
+.blog-content .highlight .s1{color:#000}
+.blog-content .highlight .s2{color:#000}
+.blog-content .highlight .sb{color:#000}
+.blog-content .highlight .sc{color:#000}
+.blog-content .highlight .sd{color:#000}
+.blog-content .highlight .se{color:#000}
+.blog-content .highlight .sh{color:#000}
+.blog-content .highlight .si{color:#000}
+.blog-content .highlight .sr{color:#000}
+.blog-content .highlight .ss{color:#000}
+.blog-content .highlight .sx{color:#000}
+.blog-content .highlight .vc{color:#000}
+.blog-content .highlight .vg{color:#000}
+.blog-content .highlight .vi{color:#000}
+.blog-content .highlight .w{color:#000}
+
+.margin-left-15{margin-left:15px}
+.blog-clear{clear:both;height:0;overflow:hidden}
+.blog-page{position:relative;float:right}
+.blog-page input{width:85px;margin:0;padding-right:15px !important}
+.blog-page .layui-laypage-count{padding:0 8px}
+.title-sidebar{border-bottom:1px solid #eee;width:100%;color:#009688;font-weight:600;padding-bottom:10px;margin-bottom:10px;overflow:hidden}
+.blog-cell{background:#fff;border:1px #e1e4e8 solid !important;border-radius:3px !important;margin-top:8px !important;margin-bottom:15px !important;padding:16px !important;position:relative}
+
+.blog-info{border:1px #e1e4e8 solid !important;border-radius:3px !important;text-align:center;padding:0 16px !important;background:#fff;margin-top:8px !important}
+.blog-info-figure{display:inline-block;margin:20px auto}
+.blog-info-figure img{border-radius:50%;max-width:70%}
+.blog-info-nickname{font-size:32px;font-weight:bold;margin:0 0 15px 0}
+.blog-info-introduce{margin:15px auto;font-size:18px;width:90%}
+.blog-info-location{color:#808080;margin:15px}
+.blog-info-contact{padding:15px;padding-top:5px}
+.blog-info-contact a{padding:0 10px}
+.blog-info-contact i{font-size:2em !important}
+
+.blog-tags{background:#fff;padding:15px;margin-top:8px !important;border:1px #e1e4e8 solid !important;border-radius:3px;overflow:hidden}
+.blog-tags div a{margin:0 6px 5px 0 !important;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+.blog-tags-text i{color:#666}
+.blog-tags div a:nth-child(8n-7){background:#8A9B0F}
+.blog-tags div a:nth-child(8n-6){background:#EB6841}
+.blog-tags div a:nth-child(8n-5){background:#3FB8AF}
+.blog-tags div a:nth-child(8n-4){background:#FE4365}
+.blog-tags div a:nth-child(8n-3){background:#FC9D9A}
+.blog-tags div a:nth-child(8n-2){background:#EDC951}
+.blog-tags div a:nth-child(8n-1){background:#C8C8A9}
+.blog-tags div a:nth-child(8n){background:#83AF9B}
+.blog-tags div a:first-child{background:#036564}
+.blog-tags div a:last-child{background:#3299BB}
+
+.blog-links{background:#fff;padding:15px;margin-top:8px !important;border:1px #e1e4e8 solid !important;border-radius:3px;overflow:hidden}
+.blog-links .blog-links-li{line-height:24px; padding-right:15px}
+
+#pdf_viewer{width:100%; height:900px; margin:0; padding:0;}
+@media screen and (max-width:768px){.fly-main{width:100%}
+ /* 头部 */
+ .index-header .index-nav li .fly-nav-avatar{padding-right:15px}
+ .index-header .index-nav{margin-right:5px;display:none}
+ .index-header .index-nav-xs{margin-right:5px;display:block}
+ .blog-nav-diff{height:60px}
+
+ /* 专栏 */
+ .blog-nav{height:auto}
+ .blog-nav ul{padding:10px;font-size:0}
+ .blog-nav ul li{float:left;width:33.33%;height:36px;line-height:36px;font-size:14px;vertical-align:middle;text-align:center;box-sizing:border-box}
+ .blog-nav-right{right:10px}
+ .blog-nav ul li.layui-this:after{display:none}
+
+ /* 页脚 */
+ .index-footer{margin-top:0;border-top:none}
+
+ #pdf_viewer{height:560px}
+}

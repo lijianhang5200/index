@@ -1,0 +1,34 @@
+---
+layout: work
+title: "李舰航的作品主页"
+---
+{% assign rawtags = "" %}
+{% for work in site.work %}
+{% if work.tags.size > 0 %}
+{% assign work_tags = work.tags | join:'|' | append:'|' %}
+{% assign rawtags = rawtags | append:work_tags %}
+{% endif %}
+{% endfor %}
+
+<style>.layui-layer-tab .layui-layer-title span { padding: 0}</style>
+<div class="layui-container">
+    <div class="layui-row">
+        <div class="layui-col-md9">
+            <div class="blog-article">
+                <div class="blog-content">
+                    <h1>{{ page.title }}</h1>
+                    <span>
+                        <i class="layui-icon layui-icon-log"></i> <span style="color: #009688">{{ page.date | date: "%Y-%m-%d" }}</span>&nbsp;
+                        <i class="layui-icon layui-icon-note"></i> <span style="color: #009688">{{ page.tags | join:' ' }}</span>
+                    </span>
+                    <divs>{{ page.content | markdownify }}</divs>
+                </div>
+                <div class="blog-clear"></div>
+            </div>
+        </div>
+        <div class="layui-col-md3">
+            {% include work_right.html %}
+        </div>
+    </div>
+</div>
+<div class="layui-clear"></div>

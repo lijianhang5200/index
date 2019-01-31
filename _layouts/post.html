@@ -1,0 +1,45 @@
+---
+layout: blog
+title: "李舰航的博客主页"
+---
+{% assign rawtags = "" %}
+{% for post in site.posts %}
+{% if post.tags.size > 0 %}
+{% assign post_tags = post.tags | join:'|' | append:'|' %}
+{% assign rawtags = rawtags | append:post_tags %}
+{% endif %}
+{% endfor %}
+<style>.layui-layer-tab .layui-layer-title span { padding: 0}</style>
+<div class="layui-container">
+    <div class="layui-row">
+        <div class="layui-col-md9">
+            <div class="blog-article">
+                <div class="blog-content">
+                    <h1>{{ page.title }}</h1>
+                    <span>
+                        <i class="layui-icon layui-icon-log"></i> <span style="color: #009688">{{ page.date | date: "%Y-%m-%d" }}</span>&nbsp;
+                        <i class="layui-icon layui-icon-note"></i> <span style="color: #009688">{{ page.tags | join:' ' }}</span>
+                    </span>
+                    <div>{{ page.content | markdownify }}</div>
+                </div>
+                <div class="layui-row" style="line-height:3">
+                    <div class="layui-col-md6">
+                        {% if page.next.url %}
+                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}">上一篇 : {{page.next.title}}</a>
+                        {% else %}<div style="text-align:left">没有上一篇了</div>{% endif %}
+                    </div>
+                    <div class="layui-col-md6">
+                        {% if page.previous.url %}
+                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" style="display:block;text-align:right">下一篇 : {{page.previous.title}}</a>
+                        {% else %}<div style="text-align:right">没有下一篇了</div>{% endif %}
+                    </div>
+                </div>
+                <div class="blog-clear"></div>
+            </div>
+        </div>
+        <div class="layui-col-md3">
+            {% include blog_right.html %}
+        </div>
+    </div>
+</div>
+<div class="layui-clear"></div>

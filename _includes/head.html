@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<base href="/">
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; Charset=utf-8"/>
+<meta http-equiv="Content-Language" content="zh-cn"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+<title>{% if page.title %}{{ page.title }}{% endif %}{{ site.name }}</title>
+<meta name="keywords" content="{% if page.keywords %}{{ page.keywords | strip_html | strip_newlines | truncate: 60 }}{% else %}{{ site.keywords }}{% endif %}">
+<meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+<link rel="alternate" type="application/atom+xml" title="{{ site.name }}" href="feed.xml"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta content="telephone=no" name="format-detection"/>
+<!--UC浏览器默认竖屏，强制全屏-->
+<meta name="full-screen" content="yes">
+<meta name="browsermode" content="application">
+<!--QQ浏览器默认竖屏，强制全屏-->
+<meta name="x5-orientation" content="portrait">
+<meta name="x5-fullscreen" content="true">
+<meta name="x5-page-mode" content="app">
+<link rel="stylesheet" href="assets/layui/css/layui.css">
+<link rel="stylesheet" href="assets/css/global.css"/>
+</head>
+<body>

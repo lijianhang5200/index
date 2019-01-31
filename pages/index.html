@@ -1,0 +1,41 @@
+---
+layout: blog
+title: "李舰航的博客主页"
+---
+{% assign rawtags = "" %}
+{% for post in site.posts %}
+{% if post.tags.size > 0 %}
+{% assign post_tags = post.tags | join:'|' | append:'|' %}
+{% assign rawtags = rawtags | append:post_tags %}
+{% endif %}
+{% endfor %}
+
+<div class="layui-container">
+    <div class="layui-row">
+        <div class="layui-col-md9">
+            <div class="blog-article" >
+                <ul class="blog-article-ul">
+                    {% for post in paginator.posts %}<li class="blog-article-li">
+                        <a href="{{ post.url }}"><h3>{{ post.title }}</h3><div>{{ post.excerpt | strip_html | escape }}</div></a>
+                        <span><i class="layui-icon layui-icon-log"></i> {{ post.date | date: "%Y-%m-%d" }} &nbsp;<i class="layui-icon layui-icon-note"></i> {{ post.tags | join:' '}}</span>
+                    </li>{% endfor %}
+                </ul>
+                {% if paginator.total_pages > 1 %}
+                <div class="layui-box layui-laypage layui-laypage-default blog-page">
+                    {% if paginator.previous_page %}<a href="{{ paginator.previous_page_path }}/index.html" class="layui-laypage-prev" title="上一页">上一页</a>{% endif %}
+                    <span class="layui-laypage-limits"><form class="layui-form"><select lay-filter="page">{% for page in (1..paginator.total_pages) %}{% if page == paginator.page %}<option value="javascript:;" selected="" class="layui-disabled">第 {{ page }} 页</option>{% elsif page == 1 %}<option value="pages/index.html">第 {{ page }} 页</option>{% else %}<option value="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}/index.html">第 {{ page }} 页</option>{% endif %}{% endfor %}</select></form></span>
+                    {% if paginator.next_page %}<a href="{{ paginator.next_page_path }}/index.html" class="layui-laypage-next" title="下一页">下一页</a>{% endif %}
+                    <span class="layui-laypage-count">共 <b>{{ paginator.total_pages }}</b> 页 <b>{{ paginator.total_posts }}</b> 篇文章</span>
+                </div>
+                {% endif %}
+
+                <div class="blog-clear"></div>
+            </div>
+        </div>
+
+        <div class="layui-col-md3">
+            {% include blog_right.html %}
+        </div>
+    </div>
+</div>
+<div class="layui-clear"></div>
