@@ -18,16 +18,16 @@ CarbonData支持完整的标准SQL支持，以及多种分析场景的支持,“
 CarbonData 原理介绍分为三部分，第一部分是数据组织介绍，第二部分是索引，第三部分是扫描数据。
 ##### 文件格式
 - 数据分布
-    - Block: 一个HDFS文件，256M
-    - Blocklet： 文件内的列存数据块是最小的IO读取单元
-        - Column chunk: Blocklet内的列数据
-        - Page: Column chunk 内的数据页，是最小解码单元
+ - Block: 一个HDFS文件，256M
+ - Blocklet： 文件内的列存数据块是最小的IO读取单元
+ - Column chunk: Blocklet内的列数据
+ - Page: Column chunk 内的数据页，是最小解码单元
 - 源数据信息
-    - Header: Version, Schema
-    - Footer: Blocklet Offset, Index & 文件级统计信息
+ - Header: Version, Schema
+ - Footer: Blocklet Offset, Index & 文件级统计信息
 - 内置索引和统计信息
-    - Blocklet索引: B Tree startkey,endkey
-    - Blocklet级和Page级统计信息: min, max等
+ - Blocklet索引: B Tree startkey,endkey
+ - Blocklet级和Page级统计信息: min, max等
 
 ![文件格式](assets/images/carbondata文件格式.jpeg)
 
@@ -120,10 +120,10 @@ mv carbondata.tar.gz carbonlib/
 | 属性 | 描述 | 值 |
 | - | - | - |
 | spark.master | 将此值设置为在yarn集群模式下运行spark.	设置yarn-client在yarn集群模式下运行Spark。 |
-| spark.yarn.dist.files | 每个执行程序放置工作目录的文件，列表以逗号分隔。 | 	/opt/spark/conf/carbon.properties |
-| spark.yarn.dist.archives | Comma-separated list of archives to be extracted into the working directory of each executor. | 	$SPARK_HOME/carbonlib/carbondata.tar.gz |
-| spark.executor.extraJavaOptions | A string of extra JVM options to pass to executors. For instance NOTE: You can enter multiple values separated by space. |	-Dcarbon.properties.filepath=carbon.properties |
-| spark.executor.extraClassPath | Extra classpath entries to prepend to the classpath of executors. NOTE: If SPARK_CLASSPATH is defined in spark-env.sh, then comment it and append the values in below parameter |  spark.driver.extraClassPath	carbondata.tar.gz/carbonlib/* |
+| spark.yarn.dist.files | 每个执行程序放置工作目录的文件，列表以逗号分隔。 | /opt/spark/conf/carbon.properties |
+| spark.yarn.dist.archives | Comma-separated list of archives to be extracted into the working directory of each executor. | $SPARK_HOME/carbonlib/carbondata.tar.gz |
+| spark.executor.extraJavaOptions | A string of extra JVM options to pass to executors. For instance NOTE: You can enter multiple values separated by space. | -Dcarbon.properties.filepath=carbon.properties |
+| spark.executor.extraClassPath | Extra classpath entries to prepend to the classpath of executors. NOTE: If SPARK_CLASSPATH is defined in spark-env.sh, then comment it and append the values in below parameter | spark.driver.extraClassPath	carbondata.tar.gz/carbonlib/* |
 | spark.driver.extraClassPath | Extra classpath entries to prepend to the classpath of the driver. NOTE: If SPARK_CLASSPATH is defined in spark-env.sh, then comment it and append the value in below parameter spark.driver.extraClassPath. | $SPARK_HOME/carbonlib/* |
 | spark.driver.extraJavaOptions | A string of extra JVM options to pass to the driver. For instance, GC settings or other logging. | -Dcarbon.properties.filepath=$SPARK_HOME/conf/carbon.properties |
 
@@ -171,10 +171,10 @@ mv carbondata.tar.gz carbonlib/
 ```shell
 spark.master=yarn-client
 spark.yarn.dist.files=/opt/cloudera/parcels/SPARK2/meta/carbon.properties
-spark.yarn.dist.archives=/opt/cloudera/parcels/SPARK2/lib/spark/carbonlib/carbondata.tar.gz
+spark.yarn.dist.archives=/opt/cloudera/parcels/SPARK2/lib/spark2/carbonlib/carbondata.tar.gz
 spark.executor.extraJavaOptions=-Dcarbon.properties.filepath=carbon.properties
 spark.executor.extraClassPath=carbondata.tar.gz/carbonlib/*
-spark.driver.extraClassPath=/opt/cloudera/parcels/SPARK2/lib/spark/carbonlib/*
+spark.driver.extraClassPath=/opt/cloudera/parcels/SPARK2/lib/spark2/carbonlib/*
 spark.driver.extraJavaOptions=-Dcarbon.properties.filepath=/opt/cloudera/parcels/SPARK2/meta/carbon.properties
 spark.dynamicAllocation.enabled true
 spark.shuffle.service.enabled true
@@ -184,7 +184,7 @@ spark.dynamicAllocation.maxExecutors 20
 ###### 5. 分发文件
 ```shell
 scp carbonlib *
-scp conf/carbon.properties conf
+scp conf/carbon.properties /opt/cloudera/parcels/SPARK2/meta/
 ```
 ###### 6. 验证安装
 ```shell
