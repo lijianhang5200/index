@@ -1,5 +1,6 @@
 # 系统信息
 host: 0.0.0.0
+port: 8080
 
 # 网站信息
 url: http://www.lijianhang.top
