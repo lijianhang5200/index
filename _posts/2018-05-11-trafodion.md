@@ -21,15 +21,17 @@ tags: [大数据, trafodion]
 4. 支持非事务型数据访问，即直接访问底层HBase表
 
 ### 安装步骤
-##### 1. 安装CDH
-##### 2. trafodion安装
+##### 1. 安装CDH [链接地址](pages/posts/2018/04/13/CDH安装.html)
+##### 2. 下载
+[http://trafodion.apache.org/download.html](http://trafodion.apache.org/download.html)
+##### 3. trafodion安装
 收集信息
 ```shell
 tar -xzf apache-trafodion_pyinstaller*
 vim python-installer/configs/db_config_default.ini
 cd python-installer ;./db_install.py
 ```
-##### 3. 安装失败
+##### 4. 安装失败
 ```shell
 kill -9 $(ps -u trafodion -o pid=)
 echo NODE_LIST=\"cdh-master cdh-slave1 cdh-slave3\" >> /etc/trafodion/trafodion_config

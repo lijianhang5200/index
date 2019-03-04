@@ -153,7 +153,7 @@ mvn -DskipTests -Pspark-2.2 -Dspark.version=2.2.1 clean package
 ```shell
 ############## System Configuration ##################
 #Mandatory. Carbon Store path
-carbon.storelocation=hdfs://namesevice/carbon
+carbon.storelocation=hdfs://nameservice/carbon
 #Base directory for Data files
 #carbon.ddl.base.hdfs.url=hdfs://hostname:8020/carbon/data
 #Path where the bad records are stored
