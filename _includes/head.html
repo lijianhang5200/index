@@ -13,13 +13,30 @@
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
 <meta content="telephone=no" name="format-detection"/>
-<!--UC浏览器默认竖屏，强制全屏-->
-<meta name="full-screen" content="yes">
-<meta name="browsermode" content="application">
-<!--QQ浏览器默认竖屏，强制全屏-->
+<!-- 删除默认的苹果工具栏和菜单栏 ： 即启用 WebApp 全屏模式  -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- 在web app应用下状态条（屏幕顶部条）的颜色；默认值为default（白色），可以定为black（黑色）和black-translucent（灰色半透明）若值为“black-translucent”将会占据页面px位置，浮在页面上方（会覆盖页面20px高度–iphone4和itouch4的Retina屏幕为40px）。 -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<!-- 忽略数字自动识别为电话号码 ,忽略识别邮箱 -->
+<meta name="format-detection" content="telephone=no, email=no" />
+<!-- 启用360浏览器的极速模式(webkit) -->
+<meta name="renderer" content="webkit">
+<!-- 避免IE使用兼容模式 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- UC强制竖屏 -->
+<meta name="screen-orientation" content="portrait" />
+<!-- UC强制全屏 -->
+<meta name="full-screen" content="true" />
+<!-- QQ强制全屏 -->
+<meta name="x5-fullscreen" content="true" />
+<!-- QQ强制竖屏 -->
 <meta name="x5-orientation" content="portrait">
-<meta name="x5-fullscreen" content="true">
 <meta name="x5-page-mode" content="app">
+<!-- 360强制全屏 -->
+<meta name="360-fullscreen" content="true" />
+<!-- 站内搜索站点验证 -->
+<meta name="baidu-site-verification" content="m1imKvW1HK" />
+
 <link rel="stylesheet" href="assets/layui/css/layui.css">
 <link rel="stylesheet" href="assets/css/global.css"/>
 </head>
