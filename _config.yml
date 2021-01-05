@@ -17,6 +17,9 @@ collections:
   work:
     output: true
     permalink: /pages/:collection/:name
+  tool:
+    output: true
+    permalink: /pages/:collection/:name
 
 # 构建
 markdown: kramdown
