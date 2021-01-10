@@ -7,6 +7,7 @@ tags: [js]
 <body onkeydown=" alert(window.event.keyCode)">
 <body onkeydown="if(window.event.keyCode==13){ window.event.keyCode=9}">
 ```
+<!--excerpt-->
 
 ```javascript
 keycode 8 = BackSpace BackSpace
